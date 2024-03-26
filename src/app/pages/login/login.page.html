@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <strong>Login</strong>
+    <section>
+      <img src="../../../assets/entrega.svg" alt="logo com traços de uma entrega">
+      <form [formGroup]="loginForm">
+        <app-input 
+          type="number" 
+          label="CPF/CNPJ" 
+          inputName="login" 
+          formControlName="login">
+        </app-input>
+        <app-input 
+          type="password" 
+          label="SENHA" 
+          inputName="senha" 
+          formControlName="senha">
+        </app-input>
+        <app-button value="Entrar" (click)="submit()"></app-button>
+      </form>
+    </section>
+  </div>
+</ion-content>
