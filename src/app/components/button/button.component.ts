@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() value: string = "Entrar"
   @Input() type: string = "submit"
+  
   constructor() { }
 
 

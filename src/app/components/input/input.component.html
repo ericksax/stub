@@ -1,4 +1,4 @@
 <div class="input-box">
-  <label position="stacked">{{label}}</label>
-  <input type={{type}}>
+  <label position="stacked" [for]="inputName">{{label}}</label>
+  <input type={{type}}  [value]="value" (input)="onInput($event)">
 </div>
