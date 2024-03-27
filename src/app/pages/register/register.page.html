@@ -1,0 +1,52 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar class="ion-justify-content-between ion-align-items-center ion-width-50">
+      <ion-title class="ion-align-self-end">Registrar usuário</ion-title>
+      <ion-buttons slot="end" class="ion-padding-end">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Registrar usuário</ion-title>
+    </ion-toolbar>
+    <ion-nav [root]="component"></ion-nav>
+  </ion-header>
+  <div class="form-container">
+    <form [formGroup]="registerForm">
+      <ion-item>
+          <ion-label>Nome:</ion-label>
+          <ion-input formControlName="name"/>
+        </ion-item>
+        <p>{{registerForm.get('formControlName')?.errors?.['minlength'] ? 'Nome inválido' : ''}}</p>
+      <ion-item>
+          <ion-label>CNPJ/CPF:</ion-label>
+          <ion-input formControlName="login" maxlength="14" />
+        </ion-item>
+        <p>{{registerForm.get('login')?.errors?.['minlength'] ? 'CPF/CNPJ inválido' : ''}}</p>
+      <ion-item>
+       
+          <ion-label>Telefone:</ion-label>
+          <ion-input formControlName="phone" maxlength="11"/>
+          
+        </ion-item>
+        <p>{{registerForm.get('phone')?.errors?.['minlength'] ? 'Telefone inválido' : ''}}</p>
+      <ion-item>
+          <ion-label>Senha:</ion-label>
+          <ion-input type="password" formControlName="password"/>
+        </ion-item>
+        <p>{{registerForm.get('password')?.errors?.['minlength'] ? 'minimo 8 caracteres' : ''}}</p>
+      <ion-item>
+     
+          <ion-label >Confirmar senha:</ion-label>
+          <ion-input type="password" formControlName="confirmPassword"/>
+       
+        </ion-item>
+        <span>{{registerForm.get('confirmPassword')?.errors?.['minlength'] ? 'minimo 8 caracteres' : ''}}</span>
+        <p>{{registerForm.get('confirmPassword')?.errors?.['passwordMatch'] && 'As senhas devem ser iguais'}}</p>
+      <ion-button [disabled]="!registerForm.valid">Registrar</ion-button>
+    </form>
+  </div>
+</ion-content>
