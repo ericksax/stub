@@ -1,0 +1,55 @@
+ion-content {
+    ion-list {
+        padding: 1rem 1rem 0 1rem;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    div {
+        display: flex;
+        margin: 8px auto;
+        padding: .5rem;
+        height: 72px;
+        gap: 1rem;
+
+        ion-input {
+            margin-top: 16px;
+            margin-top: 0;
+            display: flex;
+            border-bottom: 1px solid gray;
+            font-size: 1.2rem;
+        }
+
+        ion-button {
+            width: 30%;
+            margin: 0
+        }
+    }
+
+    ion-item {
+       cursor: pointer;
+    }
+    
+    ion-list-header {
+        margin: .5rem 0 ;
+
+        ion-label {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-bottom: 1px solid gray;
+        }
+    }
+
+    figure {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        gap: 2rem;
+    }
+  
+}
+
