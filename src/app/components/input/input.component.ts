@@ -1,5 +1,5 @@
 import { Component, Input, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -20,13 +20,14 @@ export class InputComponent implements ControlValueAccessor {
   @Input() label: string = "";
   @Input() type: string = "text";
   @Input() inputName: string = "";
+  @Input() maxLength: number = 0;
+  @Input() inputControl: FormControl= new FormControl();
 
   value: string = ""
 
   constructor() { 
-
   }
-
+  
   onChange: any = () => {}
   onTouched: any = () => {}
 
