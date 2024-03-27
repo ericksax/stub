@@ -42,22 +42,31 @@
       }
   
       form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         padding: 1rem;
-        width:100%
-      }
-  
-      div > p {
-        float: right;
-        color: white;
-        font-size: .8rem;
-        margin-bottom: 1rem;
-        cursor: pointer;
+        width:100%;
       }
     }
   }
   
+  .input-message-error {
+    margin: 0;
+    color: rgb(246, 118, 118);
+    font-size: .8rem;
+    font-weight: 600;
+    text-align: right;
+    margin-top: .4rem;
+ 
+  }
   
   ion-content {
     --background: linear-gradient( 180deg, rgb(29, 209, 206) 0%, rgb(3, 47, 54) 100% );
   }
   
+.and {
+    color: rgb(1, 102, 130);
+    font-weight: 800;
+    font-size: 1.5rem;
+}

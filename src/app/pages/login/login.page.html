@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true">
   <div id="container">
-    <strong>Login</strong>
+    <strong>Delivery<span class="and">&</span>Check</strong>
     <section>
       <img src="../../../assets/entrega.svg" alt="logo com traços de uma entrega">
       <form [formGroup]="loginForm">
@@ -8,15 +8,24 @@
           type="number" 
           label="CPF/CNPJ" 
           inputName="login" 
-          formControlName="login">
+          formControlName="login"
+          >
         </app-input>
+        <p class="input-message-error" *ngIf="loginForm.get('login')?.errors && loginForm.get('login')?.dirty">
+          {{loginForm.get('login')?.errors?.['minlength'] ? 'CPF/CNPJ inválido' : 'máximo 14 caracteres'}}
+        </p>
         <app-input 
           type="password" 
           label="SENHA" 
-          inputName="senha" 
-          formControlName="senha">
+          inputName="password" 
+          formControlName="password"
+          [maxLength]="8"
+          >
         </app-input>
-        <app-button value="Entrar" (click)="submit()"></app-button>
+        <p class="input-message-error" *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.dirty">
+          {{loginForm.get('login')?.errors?.['minlength'] ? 'minimo 8 caracteres' : 'máximo 8 caracteres'}}
+        </p>
+        <app-button value="Entrar" (click)="submit()" [disabled]="loginForm.invalid"></app-button>
       </form>
     </section>
   </div>
