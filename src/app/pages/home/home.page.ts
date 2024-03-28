@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -12,8 +11,8 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-export class HomePage implements OnInit {
 
+export class HomePage implements OnInit {
   constructor(private route: Router) { }
 
   goToLogin() {
@@ -22,6 +21,10 @@ export class HomePage implements OnInit {
 
   goToRegister() {
     this.route.navigate(['/register'])
+  }
+
+  goToRegisterDocument() {
+    this.route.navigate(['/register-document'])
   }
 
   ngOnInit() {
