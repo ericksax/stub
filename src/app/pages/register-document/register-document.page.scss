@@ -14,3 +14,15 @@ ion-button {
   --background: rgb(5, 165, 165);
   margin-top: 1rem;
 }
+
+ion-list-header {
+  margin: .5rem 0 ;
+
+  ion-label {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: rgb(2, 62, 57);
+      border-bottom: 1px solid rgb(2, 62, 57);
+  }
+}

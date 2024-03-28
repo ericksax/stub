@@ -21,8 +21,6 @@ export class RegisterPage implements OnInit {
     
    }
 
-
-   
    ngOnInit() {
     this.registerForm = this.formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -38,13 +36,12 @@ export class RegisterPage implements OnInit {
 passwordMatchValidator(control: AbstractControl): { [key: string]: boolean } | null {
   const password = control.get('password')!.value;
   const confirmPassword = control.get('confirmPassword')!.value;
-  console.log(password, confirmPassword)
-  if (password !== confirmPassword) {
-    control.get('confirmPassword')!.setErrors({ passwordMatch: true });
-    return { passwordMatch: true };
-  } else {
-    return null; // Retornar null quando as senhas coincidem
-  }
+    if (password !== confirmPassword) {
+      control.get('confirmPassword')!.setErrors({ passwordMatch: true });
+      return { passwordMatch: true };
+    } else {
+      return null; // Retornar null quando as senhas coincidem
+    }
 }
 
 }
