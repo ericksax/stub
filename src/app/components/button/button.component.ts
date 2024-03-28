@@ -4,12 +4,12 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'app-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
+  standalone: true
 })
-export class ButtonComponent  implements OnInit {
+export class ButtonComponent {
   @Input() value: string = "Entrar"
   @Input() type: string = "submit"
   constructor() { }
 
-  ngOnInit() {}
 
 }
