@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
+import { Plugins } from '@capacitor/core';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +14,10 @@ import { Router } from '@angular/router';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 
-export class HomePage implements OnInit {
+export class HomePage {
   constructor(private route: Router) { }
+
+
 
   goToLogin() {
     this.route.navigate(['/login'])
@@ -27,7 +31,14 @@ export class HomePage implements OnInit {
     this.route.navigate(['/register-document'])
   }
 
-  ngOnInit() {
+  async scan() {
+    const result = await BarcodeScanner.startScan();
+    if (result.hasContent) {
+     console.log(result.content);
+    }
   }
 
-}
+
+  }
+
+

@@ -25,9 +25,9 @@ export class InputComponent implements ControlValueAccessor {
 
   value: string = ""
 
-  constructor() { 
+  constructor() {
   }
-  
+
   onChange: any = () => {}
   onTouched: any = () => {}
 
